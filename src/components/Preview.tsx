@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { DateTime } from 'luxon';
 import { useAtom } from 'solid-jotai';
 import { Show } from 'solid-js';
 import { selectedBlogTagAtom } from '../atoms/atoms.tsx';
@@ -6,6 +7,7 @@ import Pill from './Pill.tsx';
 
 interface Props {
 	readonly path: string;
+	readonly publishDate: Date;
 	readonly tags: string[];
 	readonly thumbnailUrl?: string;
 	readonly title: string;
@@ -41,7 +43,7 @@ export default function Preview(props: Props) {
 			</h2>
 
 			<div class="flex flex-col">
-				<h3 class="text-zinc-500">{props.path}</h3>
+				<h3 class="text-zinc-500">{DateTime.fromJSDate(props.publishDate).toLocaleString()}</h3>
 				<Show when={props.tags.length}>
 					<div class="flex flex-row flex-wrap gap-2 pt-2">
 						{props.tags.map((tag) => (

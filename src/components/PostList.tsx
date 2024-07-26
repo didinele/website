@@ -14,7 +14,12 @@ export default function PostList({ posts }: { readonly posts: CollectionEntry<'b
 					return !tag || post.data.tags.includes(tag);
 				})
 				.map((entry) => (
-					<Preview path={`/blog/${entry.slug}`} title={entry.data.title} tags={entry.data.tags} />
+					<Preview
+						path={`/blog/${entry.slug}`}
+						title={entry.data.title}
+						tags={entry.data.tags}
+						publishDate={entry.data.publishDate}
+					/>
 				))}
 		</div>
 	);
