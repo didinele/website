@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 
 export const prerender = false;
 
-const mainClasses = clsx(['flex', 'flex-col', 'justify-center', 'grow', 'ma', 'px-4', 'max-w-2xl']);
+const mainClasses = clsx(['flex', 'flex-col', 'min-h-screen', 'justify-center', 'grow', 'ma', 'px-4', 'max-w-2xl']);
 
 const listArrowClasses = clsx(
 	'relative',
@@ -30,39 +30,45 @@ const listArrowClasses = clsx(
 
 <Layout title="didinele">
 	<main class={mainClasses}>
-		<h1 class="text-6xl font-bold leading-tight">
-			Hi, I'm <span class="text-sky-500">Denis</span>.
-		</h1>
-		<h2 class="font-light text-2xl">Building tools for online communities. Student at UniBuc</h2>
-		<nav class="flex gap-3 mt-6">
-			<IconButton href="mailto:me@didinele.dev" iconClass="i-fa-solid-at hover:bg-violet-700" label="Email" />
-			<IconButton href="https://github.com/didinele" iconClass="i-fa-brands-github hover:bg-[#2da44e]" label="Github" />
-			<IconButton
-				href="https://x.com/didinele_dev"
-				iconClass="i-simple-icons-twitter hover:bg-[rgb(0,133,255)]"
-				label="Twitter"
-			/>
-			<IconButton
-				href="https://keybase.io/didinele"
-				iconClass="i-fa-brands-keybase hover:bg-[#ff6f21]"
-				label="Keybase"
-			/>
-		</nav>
-		<div class="mt-12">
-			<Statuses />
+		<div class="flex-grow content-center">
+			<h1 class="text-6xl font-bold leading-tight">
+				Hi, I'm <span class="text-sky-500">Denis</span>.
+			</h1>
+			<h2 class="font-light text-2xl">Building tools for online communities. Student at UniBuc</h2>
+			<nav class="flex gap-3 mt-6">
+				<IconButton href="mailto:me@didinele.dev" iconClass="i-fa-solid-at hover:bg-violet-700" label="Email" />
+				<IconButton
+					href="https://github.com/didinele"
+					iconClass="i-fa-brands-github hover:bg-[#2da44e]"
+					label="Github"
+				/>
+				<IconButton
+					href="https://x.com/didinele_dev"
+					iconClass="i-simple-icons-twitter hover:bg-[rgb(0,133,255)]"
+					label="Twitter"
+				/>
+				<IconButton
+					href="https://keybase.io/didinele"
+					iconClass="i-fa-brands-keybase hover:bg-[#ff6f21]"
+					label="Keybase"
+				/>
+			</nav>
+			<div class="mt-12">
+				<Statuses />
+			</div>
+
+			<nav class="mt-12 text-xl">
+				<ul class="flex flex-col gap-1" role="list">
+					<li class={listArrowClasses}>
+						<a href="/blog">blog</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 
-		<nav class="mt-12 text-xl">
-			<ul class="flex flex-col gap-1" role="list">
-				<li class={listArrowClasses}>
-					<a href="/blog">blog</a>
-				</li>
-			</ul>
-		</nav>
-
-		<footer class="bg-zinc-50 dark:bg-zinc-800 mt-12">
+		<footer class="bg-zinc-50 dark:bg-zinc-800 mb-6">
 			<div class="p-4 text-center">
-				Heavily inspired by <a href="https://wnelson.dev/">Will Nelson</a>
+				Heavily inspired by <a href="https://wnelson.dev/">Will Nelson</a>'s site.
 			</div>
 		</footer>
 	</main>

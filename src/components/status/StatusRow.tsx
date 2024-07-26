@@ -5,15 +5,20 @@ import ActivityPill from './ActivityPill';
 import CurrentTime from './CurrentTime';
 import StatusPill from './StatusPill';
 
-export default function StatusRow(props: { readonly initialPresence: Presence }): JSX.Element {
+export default function StatusRow(props: { readonly initialPresence: Presence | null }): JSX.Element {
 	const presence = useLanyard(CONSTANTS.DISCORD_USER_ID, props.initialPresence);
-	const customStatus = () => presence.activities?.find((a) => a.type === 4);
-	const activities = () => presence.activities?.filter((a) => a.type === 0) ?? [];
+
+	const customStatus = () => presence?.activities?.find((a) => a.type === 4);
+	const activities = () => presence?.activities?.filter((a) => a.type === 0) ?? [];
 
 	return (
 		<div class="flex gap-2 flex-wrap">
 			<CurrentTime />
-			<StatusPill customStatus={customStatus()} status={presence.discord_status} user={presence.discord_user} />
+			<StatusPill
+				customStatus={customStatus()}
+				status={presence?.discord_status ?? 'online'}
+				user={presence?.discord_user ?? null}
+			/>
 			<Index each={activities()}>{(item) => <ActivityPill activity={item()} />}</Index>
 		</div>
 	);

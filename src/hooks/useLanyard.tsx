@@ -52,7 +52,11 @@ type PresenceUpdatePacket = EventPacket<'PRESENCE_UPDATE', Presence>;
 
 type IncomingPacket = HelloPacket | InitStatePacket | PresenceUpdatePacket;
 
-export default function useLanyard(userId: string, initialPresence: Presence) {
+export default function useLanyard(userId: string, initialPresence: Presence | null) {
+	if (!initialPresence) {
+		return null;
+	}
+
 	const [data, setData] = createStore(initialPresence);
 
 	let cleanup = new AbortController();

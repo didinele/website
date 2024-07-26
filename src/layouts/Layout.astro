@@ -8,8 +8,8 @@ export interface Props {
 
 const { title } = Astro.props;
 
-const initialPresence = await getInitialLanyardState();
-const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.avatar, 16);
+const initialPresence = await getInitialLanyardState().catch(() => null);
+const faviconUrl = initialPresence ? CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.avatar, 16) : 'noop';
 ---
 
 <!doctype html>
@@ -36,6 +36,7 @@ const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.ava
 
 		<title>{title}</title>
 	</head>
+
 	<body class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif">
 		<slot />
 	</body>

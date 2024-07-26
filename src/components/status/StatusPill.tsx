@@ -1,6 +1,7 @@
 import type { GatewayActivity } from 'discord-api-types/v10';
 import { createSignal, Match, Switch } from 'solid-js';
 import type { DiscordUser } from '../../hooks/useLanyard';
+import { CONSTANTS } from '../../util/constants.tsx';
 import DismissibleCard from '../DismissibleCard';
 import Pill from './Pill';
 
@@ -8,7 +9,7 @@ export interface StatusPillProps {
 	// eslint-disable-next-line react/no-unused-prop-types
 	readonly customStatus?: GatewayActivity;
 	readonly status: string;
-	readonly user: DiscordUser;
+	readonly user: DiscordUser | null;
 }
 
 export default function StatusPill(props: StatusPillProps) {
@@ -37,10 +38,10 @@ export default function StatusPill(props: StatusPillProps) {
 				<div>
 					<img
 						class="rounded-full w-6 h-6 inline-block mr-2"
-						src={`https://cdn.discordapp.com/avatars/${props.user.id}/${props.user.avatar}.png?size=32`}
+						src={props.user ? CONSTANTS.DISCORD_AVATAR_URL(props.user?.avatar, 32) : undefined}
 					/>
 					<div class="inline-block">
-						<span>{props.user.username}</span>
+						<span>{props.user?.username ?? 'didinele'}</span>
 					</div>
 				</div>
 			</DismissibleCard>

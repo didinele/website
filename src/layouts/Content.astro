@@ -10,8 +10,8 @@ export interface Props {
 
 const { title, publishDate } = Astro.props;
 
-const initialPresence = await getInitialLanyardState();
-const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.avatar, 16);
+const initialPresence = await getInitialLanyardState().catch(() => null);
+const faviconUrl = initialPresence ? CONSTANTS.DISCORD_AVATAR_URL(initialPresence?.discord_user.avatar, 16) : null;
 ---
 
 <!doctype html>
