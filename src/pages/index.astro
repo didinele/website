@@ -18,8 +18,7 @@ const listArrowClasses = clsx(
 	'before:absolute',
 	'before:my-auto',
 	'before:inset-y-0',
-	'before:-left-8',
-	'hover:before:-left-6',
+	'hover:before:left-2',
 	'before:i-fa-solid-arrow-right',
 	'before:block',
 	'before:content-empty',
@@ -60,7 +59,7 @@ const listArrowClasses = clsx(
 			<nav class="mt-12 text-xl">
 				<ul class="flex flex-col gap-1" role="list">
 					<li class={listArrowClasses}>
-						<a href="/blog">blog</a>
+						<a href="/blog" class="pl-8">blog</a>
 					</li>
 				</ul>
 			</nav>
@@ -68,7 +67,7 @@ const listArrowClasses = clsx(
 
 		<footer class="bg-zinc-50 dark:bg-zinc-800 mb-6">
 			<div class="p-4 text-center">
-				Heavily inspired by <a href="https://wnelson.dev/">Will Nelson</a>'s site.
+				Heavily inspired by <a href="https://wnelson.dev/" class="underline">Will Nelson</a>'s site.
 			</div>
 		</footer>
 	</main>
