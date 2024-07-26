@@ -1,0 +1,13 @@
+---
+import Link from './Link';
+
+const segment = Astro.url.pathname.split("/").find(Boolean);
+---
+
+<div
+	class="mt-6 mb-12 text-lg text-zinc-600 dark:text-zinc-400 flex items-center gap-4"
+>
+	<a class="i-bi-folder-fill inline-block" href="/"></a>
+	<div>/</div>
+	<Link href={`/${segment}`}>{segment}</Link>
+</div>

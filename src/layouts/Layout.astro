@@ -1,0 +1,44 @@
+---
+import { getInitialLanyardState } from '../util/initialLanyardState.tsx';
+import {CONSTANTS} from '../util/constants.tsx';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const initialPresence = await getInitialLanyardState();
+const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.avatar, 16);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href={faviconUrl} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="manifest" href="/manifest.json" />
+
+		<meta name="og:title" content="Denis Cristea" />
+		<meta name="og:description" content="Software & community person" />
+		<meta name="og:image" content={faviconUrl} />
+		<meta name="og:url" content={Astro.url} />
+		<meta name="og:type" content="profile" />
+		<meta name="og:profile:first_name" content="Denis" />
+		<meta name="og:profile:last_name" content="Cristea" />
+		<meta name="og:profile:username" content="didinele" />
+		<meta name="og:profile:gender" content="male" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@didinele_dev" />
+
+		<title>{title}</title>
+	</head>
+	<body
+		class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif"
+	>
+		<slot />
+	</body>
+</html>

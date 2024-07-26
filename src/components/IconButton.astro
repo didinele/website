@@ -1,0 +1,15 @@
+---
+import clsx from 'clsx';
+
+export interface Props {
+	href: string;
+	iconClass: string;
+	label: string;
+}
+
+const { iconClass, href, label } = Astro.props;
+---
+
+<a href={href} aria-label={label} data-astro-prefetch="false">
+	<div class={clsx("text-3xl", "transition-colors", iconClass)}></div>
+</a>

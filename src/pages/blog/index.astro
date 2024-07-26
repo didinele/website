@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Navbar from '../../components/Navbar.astro';
+import Preview from '../../components/Preview.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection("blog");
+---
+
+<Layout title="Blog">
+	<div class="container mx-auto w-full px-4">
+		<Navbar />
+		<div class="flex flex-col gap-2">
+			{
+				posts.map((entry) => (
+					<Preview path={`/blog/${entry.slug}`} title={entry.data.title} />
+				))
+			}
+		</div>
+	</div>
+</Layout>

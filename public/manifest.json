@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "Denis Cristea",
+	"start_url": ".",
+	"background_color": "#e7e5e4",
+	"theme_color": "#e7e5e4",
+	"description": "Software & Community person"
+}

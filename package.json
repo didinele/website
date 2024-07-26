@@ -1,0 +1,53 @@
+{
+	"name": "website",
+	"packageManager": "yarn@4.3.1",
+	"type": "module",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "tsc && eslint src && prettier --check .",
+		"format": "prettier --write .",
+		"update": "yarn upgrade-interactive",
+		"postinstall": "is-ci || husky || true"
+	},
+	"dependencies": {
+		"@astrojs/solid-js": "^3.0.3",
+		"@astrojs/vercel": "^5.2.0",
+		"@floating-ui/dom": "^1.6.8",
+		"@iconify-json/bi": "^1.1.23",
+		"@iconify-json/fa-brands": "^1.1.8",
+		"@iconify-json/fa-solid": "^1.1.8",
+		"@iconify-json/mdi": "^1.1.67",
+		"@iconify-json/simple-icons": "^1.1.110",
+		"@unocss/reset": "^0.61.5",
+		"astro": "^3.6.5",
+		"clsx": "^2.1.1",
+		"eslint": "^8.57.0",
+		"eslint-config-neon": "^0.1.62",
+		"eslint-formatter-pretty": "^6.0.1",
+		"eslint-plugin-solid": "^0.13.1",
+		"luxon": "^3.4.4",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"rehype-add-classes": "^1.0.0",
+		"solid-dismiss": "^1.8.2",
+		"solid-js": "^1.8.19",
+		"typescript": "^5.5.4",
+		"typescript-eslint": "^7.16.0",
+		"unocss": "^0.57.7"
+	},
+	"devDependencies": {
+		"@types/is-ci": "^3",
+		"@types/lodash.merge": "^4",
+		"@types/luxon": "^3.4.2",
+		"discord-api-types": "^0.37.93",
+		"husky": "^9.1.2",
+		"is-ci": "^3.0.1",
+		"lodash.merge": "^4.6.2"
+	}
+}

@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/didinele
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://didinele.dev
+  * I am didinele (https://keybase.io/didinele) on keybase.
+  * I have a public key ASDL2mKxj8-Xs-q5JJPD55gmb5v1N92ohiY7ixC40g0JhAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200b971a3dcbc171dfc87c1a44e5071820a53a5a8cc6690efe6303ef06dc6a5de80a",
+      "host": "keybase.io",
+      "kid": "0120cbda62b18fcf97b3eab92493c3e798266f9bf537dda886263b8b10b8d20d09840a",
+      "uid": "368b9b8600a89b4e5e34cb66acfd0219",
+      "username": "didinele"
+    },
+    "merkle_root": {
+      "ctime": 1721992617,
+      "hash": "45ed32440880e549ec6f32bd091f5337e8c00ce7a4406946e60890b97854374ffa31352cf9d322124deca76d06721f966fc035cd9327b9220f9c6459967fbf09",
+      "hash_meta": "7157df46bfff56b230d3ef474ff5290cee92394bdf33ae7220b6b8c72d127b58",
+      "seqno": 25953451
+    },
+    "service": {
+      "entropy": "avp2PiiS0LTkTxdvsQ/SJ5d7",
+      "hostname": "didinele.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.3.0"
+  },
+  "ctime": 1721992647,
+  "expire_in": 504576000,
+  "prev": "9b77eb3ebe0fb37efd75229ad601e072c247f5a358b1b208177757cabcdf3263",
+  "seqno": 65,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgy9pisY/Pl7PquSSTw+eYJm+b9TfdqIYmO4sQuNINCYQKp3BheWxvYWTESpcCQcQgm3frPr4Ps379dSKa1gHgcsJH9aNYsbIIF3dXyrzfMmPEIIkPzM+XBJzJB/LKbkHosLDylLFykW+r0/65r4Otu5nvAgHCo3NpZ8RAVU575Ryg4n0MtWlek7u5tivCcojAqkgISCyPzw/Ww8uInOvHrPAhuObWZg3fMkxSe5TfQYorRxmzCOXgwr3uAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAiYOnrPXt2yUZKyIzm7dsd+HElTI0HUruOZshU/h7ymo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/didinele
+
+==================================================================
