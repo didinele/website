@@ -1,4 +1,4 @@
-# Denis Cristea
+# Personal site
 
 [didinele.dev](https://didinele.dev)
 
