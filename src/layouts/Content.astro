@@ -26,10 +26,7 @@ const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.ava
 		<meta name="og:title" content={title} />
 		<meta name="og:url" content={Astro.url} />
 		<meta name="og:type" content="article" />
-		<meta
-			name="og:article:published_time"
-			content={publishDate.toISOString()}
-		/>
+		<meta name="og:article:published_time" content={publishDate.toISOString()} />
 		<meta name="og:article:author" content={Astro.site} />
 
 		<meta name="twitter:card" content="summary" />
@@ -37,14 +34,10 @@ const faviconUrl = CONSTANTS.DISCORD_AVATAR_URL(initialPresence.discord_user.ava
 
 		<title>{title} | Denis Cristea</title>
 	</head>
-	<body
-		class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif"
-	>
+	<body class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif">
 		<div class="container mx-auto w-full px-4">
 			<Navbar />
-			<article
-				class="pzinc pzinc-zinc dark:pzinc-invert max-w-pzinc mx-auto w-full pb-24 grid grid-flow-row gap-4"
-			>
+			<article class="pzinc pzinc-zinc dark:pzinc-invert max-w-pzinc mx-auto w-full pb-24 grid grid-flow-row gap-4">
 				<h1 class="text-4xl font-bold leading-tight pb-4">{title}</h1>
 				<slot />
 			</article>

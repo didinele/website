@@ -6,33 +6,25 @@ import Layout from '../layouts/Layout.astro';
 
 export const prerender = false;
 
-const mainClasses = clsx([
-	"flex",
-	"flex-col",
-	"justify-center",
-	"grow",
-	"ma",
-	"px-4",
-	"max-w-2xl",
-]);
+const mainClasses = clsx(['flex', 'flex-col', 'justify-center', 'grow', 'ma', 'px-4', 'max-w-2xl']);
 
 const listArrowClasses = clsx(
-	"relative",
-	"w-fit",
-	"text-zinc-700",
-	"dark:text-zinc-300",
-	"before:transition-left",
-	"before:pointer-events-none",
-	"before:absolute",
-	"before:my-auto",
-	"before:inset-y-0",
-	"before:-left-8",
-	"hover:before:-left-6",
-	"before:i-fa-solid-arrow-right",
-	"before:block",
-	"before:content-empty",
-	"before:w-4",
-	"before:h-4",
+	'relative',
+	'w-fit',
+	'text-zinc-700',
+	'dark:text-zinc-300',
+	'before:transition-left',
+	'before:pointer-events-none',
+	'before:absolute',
+	'before:my-auto',
+	'before:inset-y-0',
+	'before:-left-8',
+	'hover:before:-left-6',
+	'before:i-fa-solid-arrow-right',
+	'before:block',
+	'before:content-empty',
+	'before:w-4',
+	'before:h-4',
 );
 ---
 
@@ -43,16 +35,8 @@ const listArrowClasses = clsx(
 		</h1>
 		<h2 class="font-light text-2xl">Building tools for online communities. Student at UniBuc</h2>
 		<nav class="flex gap-3 mt-6">
-			<IconButton
-				href="mailto:me@didinele.dev"
-				iconClass="i-fa-solid-at hover:bg-violet-700"
-				label="Email"
-			/>
-			<IconButton
-				href="https://github.com/didinele"
-				iconClass="i-fa-brands-github hover:bg-[#2da44e]"
-				label="Github"
-			/>
+			<IconButton href="mailto:me@didinele.dev" iconClass="i-fa-solid-at hover:bg-violet-700" label="Email" />
+			<IconButton href="https://github.com/didinele" iconClass="i-fa-brands-github hover:bg-[#2da44e]" label="Github" />
 			<IconButton
 				href="https://x.com/didinele_dev"
 				iconClass="i-simple-icons-twitter hover:bg-[rgb(0,133,255)]"
@@ -67,6 +51,7 @@ const listArrowClasses = clsx(
 		<div class="mt-12">
 			<Statuses />
 		</div>
+
 		<nav class="mt-12 text-xl">
 			<ul class="flex flex-col gap-1" role="list">
 				<li class={listArrowClasses}>
@@ -74,5 +59,11 @@ const listArrowClasses = clsx(
 				</li>
 			</ul>
 		</nav>
+
+		<footer class="bg-zinc-50 dark:bg-zinc-800 mt-12">
+			<div class="p-4 text-center">
+				Heavily inspired by <a href="https://wnelson.dev/">Will Nelson</a>
+			</div>
+		</footer>
 	</main>
 </Layout>
