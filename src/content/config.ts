@@ -8,6 +8,10 @@ export const collections = {
 				.string()
 				.transform((str) => new Date(str))
 				.or(z.date()),
+			tags: z
+				.string()
+				.transform((str) => str.split(','))
+				.pipe(z.array(z.string())),
 		}),
 	}),
 };

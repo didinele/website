@@ -6465,6 +6465,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "jotai@npm:2.9.1"
+  peerDependencies:
+    "@types/react": ">=17.0.0"
+    react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/cf3eb74d3400098d65d24f8ded83535917624c8048e2f92a73de3189a2f697f5058542cc95bd1961ca22ef721a908db580daac659c16cc18173b80b3563e4d7c
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -9896,6 +9911,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"solid-jotai@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "solid-jotai@npm:0.2.2"
+  peerDependencies:
+    jotai: ">=2.1.0"
+    solid-js: ">=1.6.0"
+  checksum: 10c0/231aaa3348209028b7ea4bb4972827dde8fe5a4dcdd1979ecc05aa2d8e63c70017bb200b4576b217c7c0ece47c3d7e284b396c489a1b08974614068236374c5f
+  languageName: node
+  linkType: hard
+
 "solid-js@npm:^1.8.19":
   version: 1.8.19
   resolution: "solid-js@npm:1.8.19"
@@ -11298,12 +11323,14 @@ __metadata:
     eslint-plugin-solid: "npm:^0.13.1"
     husky: "npm:^9.1.2"
     is-ci: "npm:^3.0.1"
+    jotai: "npm:^2.9.1"
     lodash.merge: "npm:^4.6.2"
     luxon: "npm:^3.4.4"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
     rehype-add-classes: "npm:^1.0.0"
     solid-dismiss: "npm:^1.8.2"
+    solid-jotai: "npm:^0.2.2"
     solid-js: "npm:^1.8.19"
     typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^7.16.0"

@@ -2,8 +2,8 @@ import type { GatewayActivity } from 'discord-api-types/v10';
 import { createSignal, Show } from 'solid-js';
 import { CONSTANTS } from '../../util/constants.tsx';
 import DismissibleCard from '../DismissibleCard';
+import Pill from '../Pill.tsx';
 import GameCard from './GameCard';
-import Pill from './Pill';
 
 export interface ActivityPillProps {
 	readonly activity: GatewayActivity;

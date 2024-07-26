@@ -3,7 +3,7 @@ import { createSignal, Match, Switch } from 'solid-js';
 import type { DiscordUser } from '../../hooks/useLanyard';
 import { CONSTANTS } from '../../util/constants.tsx';
 import DismissibleCard from '../DismissibleCard';
-import Pill from './Pill';
+import Pill from '../Pill.tsx';
 
 export interface StatusPillProps {
 	// eslint-disable-next-line react/no-unused-prop-types

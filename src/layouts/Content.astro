@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.astro';
 import { CONSTANTS } from '../util/constants.tsx';
 import { getInitialLanyardState } from '../util/initialLanyardState.tsx';
 
-export interface Props {
+interface Props {
 	title: string;
 	publishDate: Date;
 }
@@ -32,7 +32,7 @@ const faviconUrl = initialPresence ? CONSTANTS.DISCORD_AVATAR_URL(initialPresenc
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@didinele_dev" />
 
-		<title>{title} | Denis Cristea</title>
+		<title>{title} | didinele</title>
 	</head>
 	<body class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif">
 		<div class="container mx-auto w-full px-4">
