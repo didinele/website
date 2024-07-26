@@ -1,9 +1,6 @@
 import type { GatewayActivity } from 'discord-api-types/v10';
 import { Show } from 'solid-js';
-
-function makeAssetUrl(appId: string, assetId: string): string {
-	return `https://cdn.discordapp.com/app-assets/${appId}/${assetId}.png`;
-}
+import { CONSTANTS } from '../../util/constants.tsx';
 
 export interface Props {
 	readonly activity: GatewayActivity;
@@ -16,12 +13,12 @@ export default function GameCard(props: Props) {
 				<div class="mr-2 relative">
 					<img
 						class="rounded h-18 w-18"
-						src={makeAssetUrl(props.activity.application_id!, props.activity.assets!.large_image!)}
+						src={CONSTANTS.ASSET_URL(props.activity.application_id!, props.activity.assets!.large_image!)}
 					/>
 					<Show when={props.activity.assets?.small_image}>
 						<img
 							class="absolute bottom-[-0.25rem] right-[-0.25rem] h-6 w-6 rounded-full border-3 border-white dark:border-black"
-							src={makeAssetUrl(props.activity.application_id!, props.activity.assets!.small_image!)}
+							src={CONSTANTS.ASSET_URL(props.activity.application_id!, props.activity.assets!.small_image!)}
 						/>
 					</Show>
 				</div>

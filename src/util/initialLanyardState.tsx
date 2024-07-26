@@ -7,7 +7,7 @@ interface RestResponse {
 }
 
 export async function getInitialLanyardState() {
-	const res = await fetch(`https://api.lanyard.rest/v1/users/${CONSTANTS.DISCORD_USER_ID}`);
+	const res = await fetch(CONSTANTS.LANYARD.USER(CONSTANTS.DISCORD_USER_ID));
 	if (!res.ok) {
 		throw new Error(await res.text());
 	}

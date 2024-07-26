@@ -2,6 +2,7 @@ import type { GatewayActivity } from 'discord-api-types/v10';
 import { onCleanup } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
 import { isServer } from 'solid-js/web';
+import { CONSTANTS } from '../util/constants.tsx';
 
 export interface Timestamps {
 	end: number;
@@ -76,7 +77,7 @@ export default function useLanyard(userId: string, initialPresence: Presence | n
 
 	function connect() {
 		cleanup = new AbortController();
-		socket = new WebSocket('wss://api.lanyard.rest/socket');
+		socket = new WebSocket(CONSTANTS.LANYARD.WSS);
 
 		socket.addEventListener(
 			'message',
