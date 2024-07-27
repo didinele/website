@@ -3,13 +3,18 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PostList from '../../components/PostList.tsx';
 import Navbar from '../../components/Navbar.astro';
+import { getHumanReadingTime } from '../../util/readingTime.tsx';
 
 const posts = await getCollection('blog');
+const postsWithReadingTime = posts.map((post) => {
+	const readingTime = getHumanReadingTime(post.body);
+	return { ...post, readingTime };
+});
 ---
 
 <Layout title="Blog">
 	<div class="container mx-auto w-full px-4">
 		<Navbar />
-		<PostList posts={posts} client:load />
+		<PostList posts={postsWithReadingTime} client:load />
 	</div>
 </Layout>

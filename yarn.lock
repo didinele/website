@@ -9161,6 +9161,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reading-time@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "reading-time@npm:1.5.0"
+  checksum: 10c0/0f730852fd4fb99e5f78c5b0cf36ab8c3fa15db96f87d9563843f6fd07a47864273ade539ebb184b785b728cde81a70283aa2d9b80cba5ca03b81868be03cabc
+  languageName: node
+  linkType: hard
+
 "reflect.getprototypeof@npm:^1.0.4":
   version: 1.0.6
   resolution: "reflect.getprototypeof@npm:1.0.6"
@@ -11326,8 +11333,10 @@ __metadata:
     jotai: "npm:^2.9.1"
     lodash.merge: "npm:^4.6.2"
     luxon: "npm:^3.4.4"
+    mdast-util-to-string: "npm:^4.0.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
+    reading-time: "npm:^1.5.0"
     rehype-add-classes: "npm:^1.0.0"
     solid-dismiss: "npm:^1.8.2"
     solid-jotai: "npm:^0.2.2"

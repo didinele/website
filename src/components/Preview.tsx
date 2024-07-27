@@ -8,6 +8,7 @@ import Pill from './Pill.tsx';
 interface Props {
 	readonly path: string;
 	readonly publishDate: Date;
+	readonly readingTime: string;
 	readonly tags: string[];
 	readonly thumbnailUrl?: string;
 	readonly title: string;
@@ -42,24 +43,25 @@ export default function Preview(props: Props) {
 				<a href={props.path}>{props.title}</a>
 			</h2>
 
-			<div class="flex flex-col">
-				<h3 class="text-zinc-500">{DateTime.fromJSDate(props.publishDate).toLocaleString()}</h3>
-				<Show when={props.tags.length}>
-					<div class="flex flex-row flex-wrap gap-2 pt-2">
-						{props.tags.map((tag) => (
-							<Pill
-								onClick={() => {
-									setSelectedTag(selectedTag() === tag ? undefined : tag);
-								}}
-								class={tag === selectedTag() ? 'bg-sky-500' : ''}
-								isActive={tag === selectedTag()}
-							>
-								<p>{tag}</p>
-							</Pill>
-						))}
-					</div>
-				</Show>
-			</div>
+			<p class="text-zinc-500">{props.readingTime}</p>
+
+			<h3 class="text-zinc-500">{DateTime.fromJSDate(props.publishDate).toLocaleString()}</h3>
+
+			<Show when={props.tags.length}>
+				<div class="flex flex-row flex-wrap gap-2 pt-2">
+					{props.tags.map((tag) => (
+						<Pill
+							onClick={() => {
+								setSelectedTag(selectedTag() === tag ? undefined : tag);
+							}}
+							class={tag === selectedTag() ? 'bg-sky-500' : ''}
+							isActive={tag === selectedTag()}
+						>
+							<p>{tag}</p>
+						</Pill>
+					))}
+				</div>
+			</Show>
 		</div>
 	);
 }

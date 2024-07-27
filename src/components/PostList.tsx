@@ -3,7 +3,11 @@ import { useAtom } from 'solid-jotai';
 import { selectedBlogTagAtom } from '../atoms/atoms.tsx';
 import Preview from './Preview.tsx';
 
-export default function PostList({ posts }: { readonly posts: CollectionEntry<'blog'>[] }) {
+interface Props {
+	readonly posts: (CollectionEntry<'blog'> & { readingTime: string })[];
+}
+
+export default function PostList({ posts }: Props) {
 	const [selectedTag] = useAtom(selectedBlogTagAtom);
 
 	return (
@@ -19,6 +23,7 @@ export default function PostList({ posts }: { readonly posts: CollectionEntry<'b
 						title={entry.data.title}
 						tags={entry.data.tags}
 						publishDate={entry.data.publishDate}
+						readingTime={entry.readingTime}
 					/>
 				))}
 		</div>
