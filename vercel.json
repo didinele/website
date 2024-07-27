@@ -1,4 +1,11 @@
 {
 	"cleanUrls": true,
-	"trailingSlash": false
+	"trailingSlash": false,
+	"redirects": [
+		{
+			"source": "/avie",
+			"destination": "https://akakura.wixsite.com/mysite/original?pgid=k66ebdam-29157d3e-597a-4755-85d2-06dac374578d",
+			"permanent": false
+		}
+	]
 }
