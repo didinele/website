@@ -37,8 +37,8 @@ const faviconUrl = initialPresence ? CONSTANTS.DISCORD_AVATAR_URL(initialPresenc
 	<body class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif">
 		<div class="container mx-auto w-full px-4">
 			<Navbar />
-			<article class="pzinc pzinc-zinc dark:pzinc-invert max-w-pzinc mx-auto w-full pb-24 grid grid-flow-row gap-4">
-				<h1 class="text-4xl font-bold leading-tight pb-4">{title}</h1>
+			<article class="prose prose-zinc dark:prose-invert max-w-prose mx-auto w-full pb-24">
+				<h1>{title}</h1>
 				<slot />
 			</article>
 		</div>
