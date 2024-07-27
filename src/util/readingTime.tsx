@@ -1,8 +1,7 @@
 import { DateTime } from 'luxon';
-import { toString as mdAstToString } from 'mdast-util-to-string';
 import getReadingTime from 'reading-time';
 
-export function getHumanReadingTime(md: any) {
+export function getHumanReadingTime(md: string) {
 	const { minutes } = getReadingTime(md);
 
 	const dt = DateTime.now();

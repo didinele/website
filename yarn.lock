@@ -11333,7 +11333,6 @@ __metadata:
     jotai: "npm:^2.9.1"
     lodash.merge: "npm:^4.6.2"
     luxon: "npm:^3.4.4"
-    mdast-util-to-string: "npm:^4.0.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
     reading-time: "npm:^1.5.0"
