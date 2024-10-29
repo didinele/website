@@ -24,7 +24,7 @@ functions.
 
 Anyways, I got to working on encoding. The first step is counting how many times each
 character in our input shows up. I decided I'd only support encoding ASCII text files,
-so the most trivial way to do this is to just initialize an array like so:
+so the most trivial way to count is to just initialize an array like so:
 
 ```c
 int count[256] = {0};
@@ -50,31 +50,31 @@ struct TreeNodeList *node_list_from_file(FILE *file);
 
 Converting from our `int count[256]` to a `TreeNodeList`, once again, is trivial assuming we
 counted the number of unique characters from the get-go, so I'll be omitting the code for
-it, but it can be found [here](https://github.com/didinele/huffman-c/blob/main/src/tree.c#L47-L79)
+it, but it can be found [here](https://github.com/didinele/huffman-c/blob/8df2bd97274f95dc54bde1be3c002ee90d9a7505/src/tree.c#L47-L79).
 
 Great, so now we have an array of nodes, we just have to arrange them into our tree.
 The algorithm is super simple:
 
-1. Sort our nodes array by theier "weights" (e.g. how many times the character showed up)
+1. Sort our nodes array by their "weights" (e.g. how many times the character showed up)
 2. Create a new node, where `node->left` is the node with the lowest weight and
-   `node->right` is the node with the 2nd lowest weight.
+   `node->right` is the node with the 2nd lowest weight, it takes the place of its now-children in our list.
 3. If the length of our list is now 1, return its only element (our completed tree),
    otherwise return to step 1.
 
-Obviously, this is not the best for performance when implemented literally this way,
-which is what I did. I implemented this as a recursive function that begins by calling
-`qsort()` right at the start, but it was the most naive and intuitive way of doing it.
+Obviously, this is not the best for performance when implemented literally this way.
+Calling `qsort` every single time is rather terrible, but I just wanted to get things to work.
 
-Interestingly, even with this easy approach I took with poor time complexity, I spent
+Interestingly, even with this naive approach with poor time complexity, I spent
 by _far_ the most time on this function. I had it working fairly fast, but running
 `leaks -atExit -- ./src/huffman-c` would constantly yell at me about unfreed memory, uh-oh.
 
 This was definitely _the_ moment I missed C++ the most. This sucked a ton more than
 all the nice STL data structures I was missing, smart pointers would've made this an
-infinitely quicker job. Rust would've also made this a lot nicer to implement.
+infinitely quicker job. Rust would've also made this a lot nicer to with its ownership rules
+(or how much easier it is to just copy data semantically speaking).
 
 As I was hunting down the leaks, I ran into other problems, like accidentally copying
-pointers to the same heap-allocated `TreeNode` throughout my tree. Ultimately,
+pointers to the same heap-allocated `TreeNode` and re-using them, leading to really confusing bugs. Ultimately,
 I gave up on any sensible behavior and decided to just literally _always_ copy
 my data. Bit more debugging with `leaks` later, and we landed on this (very not clean)
 implementation:
@@ -115,8 +115,8 @@ Awesome! Now that we have our tree, we can get to encoding. But first, I figured
 I'd add another extra useful layer of abstraction, a sort of "dict", mapping each
 character to the string of bits that reached the correct leaf node in our tree.
 
-One preorder traversal later, and we have our dict. You can have a look at that
-[here](https://github.com/didinele/huffman-c/blob/main/src/dict.c#L20-62).
+One preorder traversal later, and we have our dict. Once again, this is pretty simple, but you can have a look at that
+[here](https://github.com/didinele/huffman-c/blob/8df2bd97274f95dc54bde1be3c002ee90d9a7505/src/dict.c#L20-L62).
 
 Onto the _actually_ cool stuff, we need to encode (compress, really!) our data, now.
 Naturally, the first thing I thought of is splitting the file into a header and a body.
@@ -284,25 +284,28 @@ while ((byte = fgetc(bin)) != EOF)
 }
 ```
 
-And there we have it. Let's compress a larger file (1500 paragraphs of lorem ipsum) and see how much we save:
+And there we have it. Let's compress a larger file (104MBs of lorem ipsum) and see how much we save:
 
 ```
-huffman-c on  main via △ v3.30.5
+huffman-c via △ v3.30.5
 ❯ ./build/src/huffman-c encode ./original.in ./encoded.out
-huffman-c on  main via △ v3.30.5
+huffman-c via △ v3.30.5
+huffman-c on via △ v3.30.5
 ❯ ls | grep -e original.in -e encoded.out
-.rw-r--r--@ 496k didinele 28 Oct 20:13 encoded.out
-.rw-r--r--@ 927k didinele 28 Oct 20:12 original.in
+.rw-r--r--@  55M didinele 29 Oct 12:10 encoded.out
+.rw-r--r--@ 104M didinele 29 Oct 12:09 original.in
 ```
 
-Semems like it works! Let's also decode back,
+Seems like it works! Let's also decode back, and verify that our original file is the same as the decoded one:
 
 ```
-huffman-c on  main via △ v3.30.5
+huffman-c via △ v3.30.5
 ❯ ./build/src/huffman-c decode ./encoded.out ./decoded.out
 
-huffman-c on  main via △ v3.30.5
+huffman-c via △ v3.30.5
 ❯ diff --brief <(sort ./original.in) <(sort ./decoded.out)
 ```
+
+No diff! 🎉
 
 I had a blast with this project & learned a fair share. I hope I'll find the drive to this sort of thing more often.
