@@ -1,6 +1,8 @@
 ---
 import { getInitialLanyardState } from '../util/initialLanyardState.tsx';
 import { CONSTANTS } from '../util/constants.tsx';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 export interface Props {
 	title: string;
@@ -35,6 +37,9 @@ const faviconUrl = initialPresence ? CONSTANTS.DISCORD_AVATAR_URL(initialPresenc
 		<meta name="twitter:site" content="@didinele_dev" />
 
 		<title>{title}</title>
+
+		<Analytics />
+		<SpeedInsights />
 	</head>
 
 	<body class="flex h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white font-serif">

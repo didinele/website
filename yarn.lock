@@ -2241,6 +2241,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@vercel/analytics@npm:1.5.0"
+  peerDependencies:
+    "@remix-run/react": ^2
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19 || ^19.0.0-rc
+    svelte: ">= 4"
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10c0/43d33ea83b32f5203fec21b7f43c399e398f0c37d2dd341d522969e0e6ee23fd652a2766a4203a3ce573f711beee5ee1ab7d36316f767a4901160e3e96ee31e5
+  languageName: node
+  linkType: hard
+
 "@vercel/nft@npm:^0.23.1":
   version: 0.23.1
   resolution: "@vercel/nft@npm:0.23.1"
@@ -2259,6 +2289,33 @@ __metadata:
   bin:
     nft: out/cli.js
   checksum: 10c0/e19278512e9ff8618d8a9d82afe5b6f8783fbceebf6558dee67facd4d571618332bd8b025193ae33311f2e48ba68eacffc020ab621574b6398a9d945484209f6
+  languageName: node
+  linkType: hard
+
+"@vercel/speed-insights@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@vercel/speed-insights@npm:1.2.0"
+  peerDependencies:
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19 || ^19.0.0-rc
+    svelte: ">= 4"
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10c0/2fb4c4a46330949182d6f63691c51310b636fc3cc464bde3c0f24f100b712c3c4ec57a9fedcd6dc3cc75951064b3295b3cb616c80ff7179fbe310cd4314fffaa
   languageName: node
   linkType: hard
 
@@ -11321,6 +11378,8 @@ __metadata:
     "@types/lodash.merge": "npm:^4"
     "@types/luxon": "npm:^3.4.2"
     "@unocss/reset": "npm:^0.61.5"
+    "@vercel/analytics": "npm:^1.5.0"
+    "@vercel/speed-insights": "npm:^1.2.0"
     astro: "npm:^3.6.5"
     clsx: "npm:^2.1.1"
     discord-api-types: "npm:^0.37.93"
