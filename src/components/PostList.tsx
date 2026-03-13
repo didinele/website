@@ -7,6 +7,10 @@ interface Props {
 	readonly posts: (CollectionEntry<'blog'> & { readingTime: string })[];
 }
 
+function toBlogPath(id: string): string {
+	return `/blog/${id.replace(/\.(md|mdx)$/i, '')}`;
+}
+
 export default function PostList({ posts }: Props) {
 	const [selectedTag] = useAtom(selectedBlogTagAtom);
 
@@ -19,7 +23,7 @@ export default function PostList({ posts }: Props) {
 				})
 				.map((entry) => (
 					<Preview
-						path={`/blog/${entry.slug}`}
+						path={toBlogPath(entry.id)}
 						title={entry.data.title}
 						tags={entry.data.tags}
 						publishDate={entry.data.publishDate}

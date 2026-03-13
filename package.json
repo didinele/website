@@ -16,18 +16,19 @@
 		"postinstall": "is-ci || husky || true"
 	},
 	"dependencies": {
-		"@astrojs/solid-js": "^3.0.3",
-		"@astrojs/vercel": "^5.2.0",
+		"@astrojs/solid-js": "^6.0.0",
+		"@astrojs/vercel": "^10.0.0",
 		"@floating-ui/dom": "^1.6.8",
 		"@iconify-json/bi": "^1.1.23",
 		"@iconify-json/fa-brands": "^1.1.8",
 		"@iconify-json/fa-solid": "^1.1.8",
 		"@iconify-json/mdi": "^1.1.67",
 		"@iconify-json/simple-icons": "^1.1.110",
-		"@unocss/reset": "^0.61.5",
+		"@unocss/astro": "^66.6.6",
+		"@unocss/reset": "^66.6.6",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
-		"astro": "^3.6.5",
+		"astro": "^6.0.4",
 		"clsx": "^2.1.1",
 		"eslint": "^8.57.0",
 		"eslint-config-neon": "^0.1.62",
@@ -44,7 +45,7 @@
 		"solid-js": "^1.8.19",
 		"typescript": "^5.5.4",
 		"typescript-eslint": "^7.16.0",
-		"unocss": "^0.57.7"
+		"unocss": "^66.6.6"
 	},
 	"devDependencies": {
 		"@types/is-ci": "^3",

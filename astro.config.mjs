@@ -1,9 +1,9 @@
 import solidJs from '@astrojs/solid-js';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
 import rehypeAddClasses from 'rehype-add-classes';
 import { presetTypography, presetUno, presetWebFonts, presetIcons } from 'unocss';
-import Unocss from 'unocss/astro';
+import Unocss from '@unocss/astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -67,7 +67,7 @@ export default defineConfig({
 			noExternal: ['solid-dismiss'],
 		},
 	},
-	output: 'hybrid',
+	output: 'static',
 	adapter: vercel(),
 	prefetch: {
 		prefetchAll: true,
