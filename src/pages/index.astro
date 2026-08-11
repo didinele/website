@@ -25,6 +25,17 @@ const listArrowClasses = clsx(
 	'before:w-4',
 	'before:h-4',
 );
+
+const currentlyLinkClasses = clsx(
+	'underline',
+	'underline-offset-4',
+	'decoration-1',
+	'decoration-zinc-400',
+	'dark:decoration-zinc-600',
+	'transition-colors',
+	'hover:text-sky-500',
+	'hover:decoration-sky-500',
+);
 ---
 
 <Layout title="didinele">
@@ -53,8 +64,18 @@ const listArrowClasses = clsx(
 
 			<nav class="mt-12 text-xl">
 				<ul class="flex flex-col gap-1" role="list">
-					<li class={listArrowClasses}>
+					<!-- <li class={listArrowClasses}>
 						<a href="/blog" class="pl-8">blog</a>
+					</li> -->
+					<li class={listArrowClasses}>
+						<span class="pl-8">
+							maintainer @ <a href="https://discord.js.org" class={currentlyLinkClasses}>discord.js.org</a>
+						</span>
+					</li>
+					<li class={listArrowClasses}>
+						<span class="pl-8">
+							working on <a href="https://automoderator.app" class={currentlyLinkClasses}>automoderator.app</a>
+						</span>
 					</li>
 				</ul>
 			</nav>
